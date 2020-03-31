@@ -5,7 +5,7 @@ import com.nysheng.sell.dataobject.ProductCategory;
 import java.util.List;
 
 /**
- * 类目类service层接口
+ * 类目 service层接口
  *
  * @author nysheng
  * @date 2020/3/30 16:51
