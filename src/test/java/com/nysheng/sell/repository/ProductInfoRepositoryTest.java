@@ -44,7 +44,7 @@ public class ProductInfoRepositoryTest {
     }
 
     @Test
-    @Transactional
+    //@Transactional
     void saveTest(){
         ProductInfo productInfo=new ProductInfo();
         productInfo.setProductId("aaa");

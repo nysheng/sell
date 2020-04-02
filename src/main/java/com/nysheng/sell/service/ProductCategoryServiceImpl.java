@@ -1,7 +1,7 @@
 package com.nysheng.sell.service;
 
 import com.nysheng.sell.dataobject.ProductCategory;
-import com.nysheng.sell.repository.ProductCategoryReposiory;
+import com.nysheng.sell.repository.ProductCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Autowired
-    private ProductCategoryReposiory reposiory;
+    private ProductCategoryRepository reposiory;
     @Override
     public ProductCategory findOne(Integer categoryId) {
         return reposiory.findById(categoryId).orElse(null);
