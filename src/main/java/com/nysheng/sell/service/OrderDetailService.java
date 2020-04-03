@@ -7,4 +7,5 @@ package com.nysheng.sell.service;
  * @date 2020/3/31 20:52
  */
 public interface OrderDetailService{
+
 }

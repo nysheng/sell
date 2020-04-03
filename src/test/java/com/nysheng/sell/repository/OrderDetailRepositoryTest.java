@@ -39,8 +39,8 @@ class OrderDetailRepositoryTest {
         Assert.assertNotEquals(null,result);
     }
     @Test
-    void findByOrOrderIdTest() {
-        List<OrderDetail> results = repository.findByOrOrderId("123456");
+    void findByOrderIdTest() {
+        List<OrderDetail> results = repository.findByOrderId("123456");
         Assert.assertNotEquals(0,results.size());
     }
 }

@@ -2,12 +2,17 @@ package com.nysheng.sell.service;
 
 import com.nysheng.sell.dataobject.OrderDetail;
 import com.nysheng.sell.dto.OrderDTO;
+import com.nysheng.sell.enums.OrderStatusEnum;
+import com.nysheng.sell.enums.PayStatusEnum;
+import com.nysheng.sell.enums.ResultEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
@@ -47,21 +52,35 @@ class OrderMasterServiceImplTest {
 
     @Test
     void findOne() {
+        OrderDTO result = orderMasterService.findOne("1585832497684503474");
+        System.out.println(result);
+        Assert.assertNotEquals(null,result);
     }
 
     @Test
     void findList() {
+        Page<OrderDTO> orderDTOPage = orderMasterService.findList("zhang3", PageRequest.of(0, 2));
+        Assert.assertNotEquals(null,orderDTOPage);
     }
 
     @Test
     void cancel() {
+        OrderDTO orderDTO = orderMasterService.findOne("1585832497684503474");
+        OrderDTO result = orderMasterService.cancel(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.CANCEL.getStatus(),result.getOrderStatus());
     }
 
     @Test
     void finish() {
+        OrderDTO orderDTO = orderMasterService.findOne("1585832497684503474");
+        OrderDTO result = orderMasterService.finish(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.FINISHED.getStatus(),result.getOrderStatus());
     }
 
     @Test
     void paid() {
+        OrderDTO orderDTO = orderMasterService.findOne("1585832497684503474");
+        OrderDTO result = orderMasterService.paid(orderDTO);
+        Assert.assertEquals(PayStatusEnum.SUCCESS.getStatus(),result.getPayStatus());
     }
 }
