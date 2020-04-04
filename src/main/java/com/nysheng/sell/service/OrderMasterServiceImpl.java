@@ -66,10 +66,10 @@ public class OrderMasterServiceImpl implements OrderMasterService {
             orderDetailRepository.save(orderDetail);
         }
         //4订单入库
+        orderDTO.setOrderId(orderId);
+        orderDTO.setOrderAmount(orderAmount);
         OrderMaster orderMaster=new OrderMaster();
         BeanUtils.copyProperties(orderDTO,orderMaster);
-        orderMaster.setOrderId(orderId);
-        orderMaster.setOrderAmount(orderAmount);
         orderMasterRepository.save(orderMaster);
         //5扣库存
         List<CartDTO> cartDTOList=orderDTO.getOrderDetailList().stream().map(e->new CartDTO(e.getProductId(),e.getProductQuantity())).collect(Collectors.toList());
@@ -106,9 +106,9 @@ public class OrderMasterServiceImpl implements OrderMasterService {
         List<OrderDTO> orderDTOList=new ArrayList<>();
         for(OrderMaster orderMaster:orderMasterPage.getContent()){
             OrderDTO orderDTO=new OrderDTO();
-            List<OrderDetail> orderDetailList = orderDetailRepository.findByOrderId(orderMaster.getOrderId());
+            //List<OrderDetail> orderDetailList = orderDetailRepository.findByOrderId(orderMaster.getOrderId());
             BeanUtils.copyProperties(orderMaster,orderDTO);
-            orderDTO.setOrderDetailList(orderDetailList);
+            //orderDTO.setOrderDetailList(orderDetailList);
             orderDTOList.add(orderDTO);
         }
         return new PageImpl<OrderDTO>(orderDTOList,pageable,orderMasterPage.getTotalElements());

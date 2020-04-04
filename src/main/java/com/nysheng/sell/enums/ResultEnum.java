@@ -8,6 +8,8 @@ package com.nysheng.sell.enums;
  * @date 2020/4/2 17:54
  */
 public enum ResultEnum {
+    PARAM_ERROR(1,"参数错误"),
+    ORDER_OWNER_ERROR(2,"当前订单不属于当前用户"),
     PRODUCT_NOT_EXIST(10,"商品不存在"),
     PRODUCT_STOCK_ERROR(11,"库存异常"),
     ORDER_NOT_EXIST(12,"订单不存在"),
@@ -16,6 +18,7 @@ public enum ResultEnum {
     ORDER_UPDATE_FAIL(15,"订单更新失败"),
     ORDER_DETAIL_EMPTY(16,"订单中无商品详情"),
     ORDER_PAY_STATUS_ERROR(17,"订单支付状态错误"),
+    CAR_EMPTY(18,"购物车为空"),
     ;
     private Integer code;
     private String msg;

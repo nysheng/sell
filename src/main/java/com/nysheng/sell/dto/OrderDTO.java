@@ -1,5 +1,6 @@
 package com.nysheng.sell.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.nysheng.sell.dataobject.OrderDetail;
 import com.nysheng.sell.enums.OrderStatusEnum;
 import com.nysheng.sell.enums.PayStatusEnum;
@@ -16,6 +17,7 @@ import java.util.List;
  * @date 2020/4/2 16:34
  */
 @Data
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDTO {
     private String orderId;//订单表id
     private String buyerName;//买家名字
