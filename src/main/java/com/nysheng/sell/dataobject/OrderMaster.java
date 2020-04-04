@@ -4,10 +4,7 @@ import com.nysheng.sell.enums.OrderStatusEnum;
 import com.nysheng.sell.enums.PayStatusEnum;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -16,7 +13,7 @@ import java.util.Date;
  * 订单表 order_master
  *
  * @author nysheng
- * @date 2020/3/31 20:08
+ * 2020/3/31 20:08
  */
 @Entity
 @Data
@@ -33,4 +30,20 @@ public class OrderMaster {
     private Integer payStatus= PayStatusEnum.WAIT.getStatus();//支付状态，默认0未支付
     private Date createTime;//创建时间
     private Date updateTime;//更新时间
+
+    @Override
+    public String toString() {
+        return "OrderMaster{" +
+                "orderId='" + orderId + '\'' +
+                ", buyerName='" + buyerName + '\'' +
+                ", buyerPhone='" + buyerPhone + '\'' +
+                ", buyerAddress='" + buyerAddress + '\'' +
+                ", buyerOpenid='" + buyerOpenid + '\'' +
+                ", orderAmount=" + orderAmount +
+                ", orderStatus=" + orderStatus +
+                ", payStatus=" + payStatus +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }

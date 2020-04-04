@@ -7,18 +7,14 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * 类目Service测试类
  *
  * @author nysheng
- * @date 2020/3/30 17:12
+ * 2020/3/30 17:12
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

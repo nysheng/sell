@@ -6,13 +6,12 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * 订单详情表
  *
  * @author nysheng
- * @date 2020/3/31 20:39
+ * 2020/3/31 20:39
  */
 @Entity
 @Data
@@ -26,4 +25,17 @@ public class OrderDetail {
     private BigDecimal productPrice;//商品价格
     private Integer productQuantity;//商品数量
     private String productIcon;//商品图片
+
+    @Override
+    public String toString() {
+        return "OrderDetail{" +
+                "detailId='" + detailId + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", productId='" + productId + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                ", productQuantity=" + productQuantity +
+                ", productIcon='" + productIcon + '\'' +
+                '}';
+    }
 }

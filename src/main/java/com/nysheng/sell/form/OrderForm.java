@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
  * 买家订单 表单数据
  *
  * @author nysheng
- * @date 2020/4/3 19:48
+ * 2020/4/3 19:48
  */
 @Data
 public class OrderForm {

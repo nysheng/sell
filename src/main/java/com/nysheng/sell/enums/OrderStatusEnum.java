@@ -4,7 +4,7 @@ package com.nysheng.sell.enums;
  * 订单状态
  *
  * @author nysheng
- * @date 2020/3/31 20:23
+ * 2020/3/31 20:23
  */
 public enum OrderStatusEnum {
     NEW(0,"新订单"),

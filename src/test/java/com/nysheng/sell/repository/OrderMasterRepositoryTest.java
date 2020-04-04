@@ -9,16 +9,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.math.BigDecimal;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * 订单 DAO层测试
  *
  * @author nysheng
- * @date 2020/3/31 21:03
+ * 2020/3/31 21:03
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

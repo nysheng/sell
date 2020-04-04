@@ -1,6 +1,5 @@
 package com.nysheng.sell.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.nysheng.sell.dataobject.OrderDetail;
 import com.nysheng.sell.enums.OrderStatusEnum;
 import com.nysheng.sell.enums.PayStatusEnum;
@@ -14,7 +13,7 @@ import java.util.List;
  *  订单数据传输对象
  *
  * @author nysheng
- * @date 2020/4/2 16:34
+ * 2020/4/2 16:34
  */
 @Data
 //@JsonInclude(JsonInclude.Include.NON_NULL)

@@ -6,7 +6,7 @@ import java.util.Random;
  * 主键id生成工具
  *
  * @author nysheng
- * @date 2020/4/2 18:16
+ * 2020/4/2 18:16
  */
 public class KeyUtil {
     public static synchronized String getUniqueKey(){

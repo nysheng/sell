@@ -6,7 +6,7 @@ import lombok.Data;
  * http请求返回商品的最外层信息
  *
  * @author nysheng
- * @date 2020/3/31 11:28
+ * 2020/3/31 11:28
  */
 @Data
 public class ResultVO<T> {

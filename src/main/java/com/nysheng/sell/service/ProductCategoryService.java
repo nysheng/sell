@@ -8,7 +8,7 @@ import java.util.List;
  * 类目 service层接口
  *
  * @author nysheng
- * @date 2020/3/30 16:51
+ * 2020/3/30 16:51
  */
 public interface ProductCategoryService {
     ProductCategory findOne(Integer categoryId);

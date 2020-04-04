@@ -18,7 +18,7 @@ import java.util.List;
  * 商品信息 Service实现类
  *
  * @author nysheng
- * @date 2020/3/30 20:56
+ * 2020/3/30 20:56
  */
 @Service
 public class ProductInfoServiceImpl implements ProductInfoService {

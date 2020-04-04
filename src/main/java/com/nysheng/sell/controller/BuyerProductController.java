@@ -9,14 +9,11 @@ import com.nysheng.sell.vo.ProductVO;
 import com.nysheng.sell.vo.ResultVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,7 +38,7 @@ public class BuyerProductController {
         List<Integer> categoryTypeList= productInfoList.stream().map(e->e.getCategoryType()).collect(Collectors.toList());
         List<ProductCategory> productCategoryList = categoryService.findByCategoryTypeIn(categoryTypeList);
         //3.数据拼装
-        ResultVO resultVO=new ResultVO();
+        ResultVO<List<ProductVO>> resultVO=new ResultVO<>();
         List<ProductVO> datas=new ArrayList<>();
         for(ProductCategory productCategory:productCategoryList){
             ProductVO productVO = new ProductVO();

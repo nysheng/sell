@@ -7,17 +7,13 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.math.BigDecimal;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * 订单详情 DAO层测试
  *
  * @author nysheng
- * @date 2020/4/1 17:57
+ * 2020/4/1 17:57
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

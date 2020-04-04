@@ -13,12 +13,10 @@ import com.nysheng.sell.repository.OrderDetailRepository;
 import com.nysheng.sell.repository.OrderMasterRepository;
 import com.nysheng.sell.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.criterion.Order;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,7 +32,7 @@ import java.util.stream.Collectors;
  * 订单 service层实现类
  *
  * @author nysheng
- * @date 2020/4/2 16:46
+ * 2020/4/2 16:46
  */
 @Service
 @Slf4j
@@ -139,7 +137,7 @@ public class OrderMasterServiceImpl implements OrderMasterService {
         List<CartDTO> cartDTOList=orderDTO.getOrderDetailList().stream().map(e->new CartDTO(e.getProductId(),e.getProductQuantity())).collect(Collectors.toList());
         productInfoService.increaseStock(cartDTOList);
         //4如果已支付，退款
-        if(orderMaster.getPayStatus().equals(PayStatusEnum.SUCCESS)){
+        if(orderMaster.getPayStatus().equals(PayStatusEnum.SUCCESS.getStatus())){
             //TODO
         }
         return orderDTO;

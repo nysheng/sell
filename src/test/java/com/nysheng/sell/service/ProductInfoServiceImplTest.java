@@ -14,12 +14,11 @@ import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 
-
 /**
  * 商品信息 service实现类测试
  *
  * @author nysheng
- * @date 2020/3/30 22:04
+ * 2020/3/30 22:04
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

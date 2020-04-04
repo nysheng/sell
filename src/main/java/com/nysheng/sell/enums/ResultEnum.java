@@ -5,7 +5,7 @@ package com.nysheng.sell.enums;
  * 异常消息
  *
  * @author nysheng
- * @date 2020/4/2 17:54
+ * 2020/4/2 17:54
  */
 public enum ResultEnum {
     PARAM_ERROR(1,"参数错误"),

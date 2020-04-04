@@ -7,7 +7,7 @@ import java.util.List;
  * 类目 DAO层接口
  *
  * @author nysheng
- * @date 2020/3/30 17:10
+ * 2020/3/30 17:10
  */
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory,Integer> {
     List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryTypeList);

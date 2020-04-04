@@ -9,7 +9,7 @@ import java.util.List;
  * 商品（包含类目）
  *
  * @author nysheng
- * @date 2020/3/31 11:38
+ * 2020/3/31 11:38
  */
 @Data
 public class ProductVO {

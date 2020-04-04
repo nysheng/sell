@@ -11,7 +11,7 @@ import java.util.List;
  * 商品信息 service层接口
  *
  * @author nysheng
- * @date 2020/3/30 20:37
+ * 2020/3/30 20:37
  */
 public interface ProductInfoService {
     //查找单个商品

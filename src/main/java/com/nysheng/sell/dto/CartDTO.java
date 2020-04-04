@@ -6,7 +6,7 @@ import lombok.Data;
  * 库存数据传输对象
  *
  * @author nysheng
- * @date 2020/4/2 19:19
+ * 2020/4/2 19:19
  */
 @Data
 public class CartDTO {

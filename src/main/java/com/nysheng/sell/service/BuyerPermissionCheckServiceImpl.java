@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * 用户权限校验实现类
  *
  * @author nysheng
- * @date 2020/4/4 10:42
+ * 2020/4/4 10:42
  */
 @Service
 @Slf4j

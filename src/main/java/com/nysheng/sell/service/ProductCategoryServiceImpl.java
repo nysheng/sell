@@ -11,7 +11,7 @@ import java.util.List;
  * 类目Service层实现类
  *
  * @author nysheng
- * @date 2020/3/30 17:03
+ * 2020/3/30 17:03
  */
 @Service
 public class ProductCategoryServiceImpl implements ProductCategoryService {

@@ -8,7 +8,7 @@ import javax.persistence.*;
  * 类目表 product_category
  *
  * @author nysheng
- * @date 2020/3/30 16:51
+ * 2020/3/30 16:51
  */
 @Entity
 @DynamicUpdate

@@ -4,7 +4,7 @@ package com.nysheng.sell.enums;
  * 支付状态
  *
  * @author nysheng
- * @date 2020/3/31 20:31
+ * 2020/3/31 20:31
  */
 public enum PayStatusEnum {
     WAIT(0,"等待支付"),

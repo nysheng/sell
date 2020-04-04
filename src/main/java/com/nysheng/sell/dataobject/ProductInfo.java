@@ -1,6 +1,5 @@
 package com.nysheng.sell.dataobject;
 
-import com.nysheng.sell.service.ProductCategoryService;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
@@ -10,7 +9,7 @@ import java.math.BigDecimal;
  * 商品信息表 product_info
  *
  * @author nysheng
- * @date 2020/3/30 20:09
+ * 2020/3/30 20:09
  */
 @Entity
 @DynamicUpdate
