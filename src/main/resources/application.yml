@@ -11,3 +11,11 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null
+
+wechat:
+  weAppId: wx5aecc6026a350680
+  weAppSecret: 4e61dc329ae11f895eb16d99b8c3bec9
+  mchId: 1409146202
+  mchKey: 0976503d34ca432c601361f969fd8d85
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://redbtree.natapp4.cc/sell/pay/notify
