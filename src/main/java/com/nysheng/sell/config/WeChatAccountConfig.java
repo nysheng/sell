@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
  * @author nysheng
  * 2020/4/6 18:17
  */
+@ConfigurationProperties(prefix = "wechat")
 @Data
 @Component
-@ConfigurationProperties(prefix = "wechat")
 public class WeChatAccountConfig {
     private String weAppId;
     private String weAppSecret;

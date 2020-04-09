@@ -29,13 +29,13 @@ public class WeChatController {
     private WxMpService wxMpService;
     @GetMapping("/authorize")
     public String authorize(@RequestParam("returnUrl")String returnUrl){
-        String url="http://redbtree.natapp4.cc/sell/wechat/userinfo";
+        String url="http://redbtree.natapp4.cc/sell/wechat/userInfo";
         String resultUrl = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAuth2Scope.SNSAPI_BASE, URLEncoder.encode(returnUrl));
         return "redirect:"+resultUrl;
     }
 
-    @GetMapping("userinfo")
-    public String userinfo(@RequestParam("code")String code,@RequestParam("state")String returnUrl ){
+    @GetMapping("/userInfo")
+    public String userInfo(@RequestParam("code")String code,@RequestParam("state")String returnUrl ){
         WxMpOAuth2AccessToken wxMpOAuth2AccessToken=new WxMpOAuth2AccessToken();
         try {
             wxMpOAuth2AccessToken = wxMpService.oauth2getAccessToken(code);
@@ -43,8 +43,7 @@ public class WeChatController {
             log.info("【微信网页授权】获得的code:{}，state:{}",code,returnUrl);
             throw new SellException(ResultEnum.WECHAT_CP_ERROR.getCode(),e.getError().getErrorMsg());
         }
-        String openId=wxMpOAuth2AccessToken.getOpenId();
-        //String accessToken=wxMpOAuth2AccessToken.getAccessToken();
-        return "redirect:"+returnUrl+"?openid="+openId;
+        String openid=wxMpOAuth2AccessToken.getOpenId();
+        return "redirect:"+returnUrl+"?openid="+openid;
     }
 }

@@ -47,7 +47,7 @@ public class BuyerOrderController {
         orderDTO.setBuyerName(orderForm.getName());
         orderDTO.setBuyerPhone(orderForm.getPhone());
         orderDTO.setBuyerAddress(orderForm.getAddress());
-        orderDTO.setBuyerOpenid(orderForm.getOpenId());
+        orderDTO.setBuyerOpenid(orderForm.getOpenid());
         Gson gson=new Gson();
         List<OrderDetail> orderDetailList=new ArrayList<>();
         try{

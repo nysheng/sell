@@ -19,7 +19,7 @@ public class OrderForm {
     @NotEmpty(message = "地址必填")
     private String address;//买家地址
     @NotEmpty(message = "openId必填")
-    private String openId;//买家openid
+    private String openid;//买家openid
     @NotEmpty(message = "购物车不能为空")
     private String items;//购物车
 }

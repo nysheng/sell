@@ -43,6 +43,8 @@ public class OrderMasterServiceImpl implements OrderMasterService {
     private OrderDetailRepository orderDetailRepository;
     @Autowired
     private OrderMasterRepository orderMasterRepository;
+    @Autowired
+    private PayService payService;
     @Override
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
@@ -138,7 +140,7 @@ public class OrderMasterServiceImpl implements OrderMasterService {
         productInfoService.increaseStock(cartDTOList);
         //4如果已支付，退款
         if(orderMaster.getPayStatus().equals(PayStatusEnum.SUCCESS.getStatus())){
-            //TODO
+            payService.refund(orderDTO);
         }
         return orderDTO;
     }
