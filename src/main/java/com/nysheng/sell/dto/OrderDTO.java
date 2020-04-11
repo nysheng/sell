@@ -1,8 +1,10 @@
 package com.nysheng.sell.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.nysheng.sell.dataobject.OrderDetail;
 import com.nysheng.sell.enums.OrderStatusEnum;
 import com.nysheng.sell.enums.PayStatusEnum;
+import com.nysheng.sell.utils.EnumUtil;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -29,4 +31,12 @@ public class OrderDTO {
     private Date createTime;//创建时间
     private Date updateTime;//更新时间
     private List<OrderDetail> orderDetailList;//订单详情列表
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum(){
+        return EnumUtil.getByStatus(this.orderStatus,OrderStatusEnum.class);
+    }
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum(){
+        return EnumUtil.getByStatus(this.payStatus,PayStatusEnum.class);
+    }
 }

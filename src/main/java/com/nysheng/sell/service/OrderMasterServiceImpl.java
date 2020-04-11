@@ -102,16 +102,28 @@ public class OrderMasterServiceImpl implements OrderMasterService {
     public Page<OrderDTO> findList(String buyerOpenid, Pageable pageable) {
         //1查找订单表数据
         Page<OrderMaster> orderMasterPage = orderMasterRepository.findByBuyerOpenid(buyerOpenid, pageable);
-        //2遍历订单详情
-        List<OrderDTO> orderDTOList=new ArrayList<>();
+        //2遍历订单数据
+        List<OrderDTO> orderDTOList=new ArrayList<OrderDTO>();
         for(OrderMaster orderMaster:orderMasterPage.getContent()){
             OrderDTO orderDTO=new OrderDTO();
-            //List<OrderDetail> orderDetailList = orderDetailRepository.findByOrderId(orderMaster.getOrderId());
             BeanUtils.copyProperties(orderMaster,orderDTO);
-            //orderDTO.setOrderDetailList(orderDetailList);
             orderDTOList.add(orderDTO);
         }
         return new PageImpl<OrderDTO>(orderDTOList,pageable,orderMasterPage.getTotalElements());
+    }
+
+    @Override
+    public Page<OrderDTO> findList(Pageable pageable) {
+        //查找订单表数据
+        Page<OrderMaster> orderMasterPage = orderMasterRepository.findAll(pageable);
+        List<OrderDTO> list = new ArrayList<>();
+        //遍历订单数据
+        for(OrderMaster orderMaster: orderMasterPage.getContent()){
+            OrderDTO orderDTO=new OrderDTO();
+            BeanUtils.copyProperties(orderMaster,orderDTO);
+            list.add(orderDTO);
+        }
+        return new PageImpl<OrderDTO>(list,pageable,orderMasterPage.getTotalElements());
     }
 
     @Override

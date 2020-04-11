@@ -8,6 +8,7 @@ package com.nysheng.sell.enums;
  * 2020/4/2 17:54
  */
 public enum ResultEnum {
+    SUCCESS(0,"成功"),
     PARAM_ERROR(1,"参数错误"),
     ORDER_OWNER_ERROR(2,"当前订单不属于当前用户"),
     PRODUCT_NOT_EXIST(10,"商品不存在"),
@@ -21,6 +22,8 @@ public enum ResultEnum {
     CAR_EMPTY(18,"购物车为空"),
     WECHAT_CP_ERROR(19,"微信公众号账号错误"),
     WXPAY_NOTIFY_MONEY_VERIFY_ERROR(20,"微信支付异步通知金额校验不通过"),
+    ORDER_CANCEL_SUCCESS(21,"订单取消成功"),
+    ORDER_FINISH_SUCCESS(21,"订单完结成功"),
     ;
     private Integer code;
     private String msg;

@@ -79,4 +79,9 @@ class OrderMasterServiceImplTest {
         OrderDTO result = orderMasterService.paid(orderDTO);
         Assert.assertEquals(PayStatusEnum.SUCCESS.getStatus(),result.getPayStatus());
     }
+    @Test
+    void list(){
+        Page<OrderDTO> list = orderMasterService.findList(PageRequest.of(0, 10));
+        Assert.assertNotEquals(0,list.getTotalElements());
+    }
 }
