@@ -38,7 +38,7 @@ public class ProductInfoRepositoryTest {
 
     @Test
     void findUpAllTest() {
-        List<ProductInfo> results = repository.findByProductStatus(ProductStatusEnum.UP.getCode());
+        List<ProductInfo> results = repository.findByProductStatus(ProductStatusEnum.UP.getStatus());
         Assert.assertNotEquals(0,results.size());
     }
 
@@ -50,7 +50,7 @@ public class ProductInfoRepositoryTest {
         productInfo.setProductName("皮蛋粥");
         productInfo.setProductPrice(new BigDecimal(3.00));
         productInfo.setProductDescription("很好喝的皮蛋粥");
-        productInfo.setProductStatus(ProductStatusEnum.UP.getCode());
+        productInfo.setProductStatus(ProductStatusEnum.UP.getStatus());
         productInfo.setProductStock(100);
         productInfo.setProductIcon("http://xxxx.jpg");
         productInfo.setCategoryType(1);

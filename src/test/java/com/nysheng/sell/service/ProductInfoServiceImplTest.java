@@ -58,7 +58,7 @@ public class ProductInfoServiceImplTest {
         productInfo.setProductName("蔬菜粥");
         productInfo.setProductPrice(new BigDecimal(4.00));
         productInfo.setProductDescription("很好喝的蔬菜粥");
-        productInfo.setProductStatus(ProductStatusEnum.UP.getCode());
+        productInfo.setProductStatus(ProductStatusEnum.UP.getStatus());
         productInfo.setProductStock(100);
         productInfo.setProductIcon("http://xxxx.jpg");
         productInfo.setCategoryType(1);

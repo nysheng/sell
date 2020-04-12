@@ -28,4 +28,8 @@ public interface ProductInfoService {
     void increaseStock(List<CartDTO> cartDTOList);
     //添加库存
     void decreaseStock(List<CartDTO> cartDTOList);
+    //上架
+    ProductInfo onSale(ProductInfo productInfo);
+    //下架
+    ProductInfo offSale(ProductInfo productInfo);
 }

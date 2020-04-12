@@ -1,5 +1,5 @@
 <html>
-    <#include "../common/herder.ftl">
+<#include "../common/herder.ftl">
 <body>
 <div id="wrapper" class="toggled">
     <#include "../common/nav.ftl">
@@ -11,31 +11,31 @@
                         <thead>
                         <tr>
                             <th>
-                                订单id
+                                商品id
                             </th>
                             <th>
-                                姓名
+                                名称
                             </th>
                             <th>
-                                手机号
+                                图片
                             </th>
                             <th>
-                                地址
+                                单价
                             </th>
                             <th>
-                                金额
+                                库存
                             </th>
                             <th>
-                                订单状态
+                                描述
                             </th>
                             <th>
-                                支付方式
-                            </th>
-                            <th>
-                                支付状态
+                                类目
                             </th>
                             <th>
                                 创建时间
+                            </th>
+                            <th>
+                                修改时间
                             </th>
                             <th colspan="2">
                                 操作
@@ -43,42 +43,45 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <#list orderDTOPage.content as orderDTO>
+                        <#list productInfoPage.content as productInfo>
                             <tr>
                                 <td>
-                                    ${orderDTO.orderId}
+                                    ${productInfo.productId}
                                 </td>
                                 <td>
-                                    ${orderDTO.buyerName}
+                                    ${productInfo.productName}
                                 </td>
                                 <td>
-                                    ${orderDTO.buyerPhone}
+                                    <img width="50" height="50" src="${productInfo.productIcon}">
                                 </td>
                                 <td>
-                                    ${orderDTO.buyerAddress}
+                                    ${productInfo.productPrice}
                                 </td>
                                 <td>
-                                    ${orderDTO.orderAmount}
+                                    ${productInfo.productStock}
                                 </td>
                                 <td>
-                                    ${orderDTO.orderStatusEnum.msg}
+                                    ${productInfo.productDescription}
                                 </td>
                                 <td>
-                                    微信
+                                    ${productInfo.categoryType}
                                 </td>
                                 <td>
-                                    ${orderDTO.payStatusEnum.msg}
+                                    ${productInfo.createTime}
                                 </td>
                                 <td>
-                                    ${orderDTO.createTime}
+                                    ${productInfo.updateTime}
                                 </td>
                                 <td>
-                                    <button onclick="location.href='/sell/seller/order/detail?orderId=${orderDTO.orderId}'" type="button" class="btn btn-default btn-link">详情</button>
+                                    <button  type="button" class="btn btn-default btn-link">修改</button>
                                 </td>
                                 <td>
-                                    <#if orderDTO.orderStatusEnum.msg=="新订单">
-                                        <button type="button" onclick="location.href='/sell/seller/order/cancel?orderId=${orderDTO.orderId}'" class="btn btn-default btn-link">取消</button>
+                                    <#if productInfo.productStatusEnum.message=="在架">
+                                        <button onclick="location.href='/sell/seller/product/off_sale?productId=${productInfo.productId}'" type="button" class="btn btn-default btn-link">下架</button>
+                                    <#else>
+                                        <button onclick="location.href='/sell/seller/product/on_sale?productId=${productInfo.productId}'" type="button" class="btn btn-default btn-link">上架</button>
                                     </#if>
+
                                 </td>
                             </tr>
                         </#list>
@@ -89,39 +92,39 @@
                         <#if currentPage lte 1>
                             <li class="disabled"><a href="#">上一页</a></li>
                         <#else >
-                            <li><a href="/sell/seller/order/list?page=${currentPage-1}&size=${currentSize}">上一页</a></li>
+                            <li><a href="/sell/seller/product/list?page=${currentPage-1}&size=${currentSize}">上一页</a></li>
                         </#if>
-                        <#if orderDTOPage.totalPages gt 3>
+                        <#if productInfoPage.totalPages gt 3>
                             <#if currentPage==1>
-                                <li class="disabled"> <a href="/sell/seller/order/list?page=1&size=${currentSize}">1</a> </li>
+                                <li class="disabled"> <a href="/sell/seller/product/list?page=1&size=${currentSize}">1</a> </li>
                             <#else>
-                                <li> <a href="/sell/seller/order/list?page=1&size=${currentSize}">1</a> </li>
+                                <li> <a href="/sell/seller/product/list?page=1&size=${currentSize}">1</a> </li>
                             </#if>
                             <li class="disabled"> <a href="#">.</a> </li>
-                            <#if currentPage!=1 && currentPage!=orderDTOPage.totalPages>
-                                <li class="disabled"> <a href="/sell/seller/order/list?page=${currentPage}&size=${currentSize}">${currentPage}</a> </li>
+                            <#if currentPage!=1 && currentPage!=productInfoPage.totalPages>
+                                <li class="disabled"> <a href="/sell/seller/product/list?page=${currentPage}&size=${currentSize}">${currentPage}</a> </li>
                             <#else>
                                 <li class="disabled"> <a href="#">.</a> </li>
                             </#if>
                             <li class="disabled"> <a href="#">.</a> </li>
-                            <#if currentPage==orderDTOPage.totalPages>
-                                <li class="disabled"> <a href="/sell/seller/order/list?page=${orderDTOPage.totalPages}&size=${currentSize}">${orderDTOPage.totalPages}</a> </li>
+                            <#if currentPage==productInfoPage.totalPages>
+                                <li class="disabled"> <a href="/sell/seller/product/list?page=${productInfoPage.totalPages}&size=${currentSize}">${productInfoPage.totalPages}</a> </li>
                             <#else>
-                                <li> <a href="/sell/seller/order/list?page=${orderDTOPage.totalPages}&size=${currentSize}">${orderDTOPage.totalPages}</a> </li>
+                                <li> <a href="/sell/seller/order/product?page=${productInfoPage.totalPages}&size=${currentSize}">${productInfoPage.totalPages}</a> </li>
                             </#if>
                         <#else>
-                            <#list 1..orderDTOPage.totalPages as index>
+                            <#list 1..productInfoPage.totalPages as index>
                                 <#if currentPage==index>
-                                    <li class="disabled"> <a href="/sell/seller/order/list?page=${index}&size=${currentSize}">${index}</a> </li>
+                                    <li class="disabled"> <a href="/sell/seller/product/list?page=${index}&size=${currentSize}">${index}</a> </li>
                                 <#else>
-                                    <li> <a href="/sell/seller/order/list?page=${index}&size=${currentSize}">${index}</a> </li>
+                                    <li> <a href="/sell/seller/product/list?page=${index}&size=${currentSize}">${index}</a> </li>
                                 </#if>
                             </#list>
                         </#if>
-                        <#if currentPage gte orderDTOPage.totalPages>
+                        <#if currentPage gte productInfoPage.totalPages>
                             <li class="disabled"><a href="#">下一页</a></li>
                         <#else >
-                            <li><a href="/sell/seller/order/list?page=${currentPage+1}&size=${currentSize}">下一页</a></li>
+                            <li><a href="/sell/seller/product/list?page=${currentPage+1}&size=${currentSize}">下一页</a></li>
                         </#if>
                     </ul>
                 </div>
