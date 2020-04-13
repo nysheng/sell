@@ -3,6 +3,7 @@ package com.nysheng.sell.dataobject;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * 类目表 product_category
@@ -22,7 +23,10 @@ public class ProductCategory {
     private String categoryName;
     //类目编号
     private Integer categoryType;
-
+    //创建时间
+    private Date createTime;
+    //修改时间
+    private Date updateTime;
     public ProductCategory(){}
     public ProductCategory(String categoryName,Integer categoryType){
         this.categoryName=categoryName;

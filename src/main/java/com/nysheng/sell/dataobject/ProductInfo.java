@@ -26,7 +26,7 @@ public class ProductInfo {
     private Integer productStock;//库存
     private String productDescription;//描述
     private String productIcon;//图标
-    private Integer productStatus;//商品状态，0正常1下架
+    private Integer productStatus=ProductStatusEnum.UP.getStatus();//商品状态，0正常1下架，默认为上架
     private Integer categoryType;//类目编号
     private Date createTime;//创建时间
     private Date updateTime;//修改时间

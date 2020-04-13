@@ -73,7 +73,7 @@
                                     ${productInfo.updateTime}
                                 </td>
                                 <td>
-                                    <button  type="button" class="btn btn-default btn-link">修改</button>
+                                    <button onclick="location.href='/sell/seller/product/index?productId=${productInfo.productId}'"  type="button" class="btn btn-default btn-link">修改</button>
                                 </td>
                                 <td>
                                     <#if productInfo.productStatusEnum.message=="在架">

@@ -25,6 +25,7 @@ public enum ResultEnum {
     ORDER_CANCEL_SUCCESS(21,"订单取消成功"),
     ORDER_FINISH_SUCCESS(22,"订单完结成功"),
     PRODUCT_STATUS_ERROR(23,"商品状态错误"),
+    CATEGORY_NOT_EXIST(24,"类目不存在"),
     ;
     private Integer code;
     private String msg;
