@@ -26,6 +26,8 @@ public enum ResultEnum {
     ORDER_FINISH_SUCCESS(22,"订单完结成功"),
     PRODUCT_STATUS_ERROR(23,"商品状态错误"),
     CATEGORY_NOT_EXIST(24,"类目不存在"),
+    SELLER_OPENID_NOT_EXIST(25,"当前openid不存在"),
+    WECHAT_OPEN_ERROR(26,"微信开放平台账号错误"),
     ;
     private Integer code;
     private String msg;

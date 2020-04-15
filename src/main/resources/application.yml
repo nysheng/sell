@@ -13,10 +13,19 @@ spring:
     default-property-inclusion: non_null
   freemarker:
     suffix: .ftl
+  redis:
+    host: 192.168.1.11
+    port: 6379
 wechat:
   weAppId: wx093c72359ab3e8dc
   weAppSecret: 5bb8701228f79a96e0bc07710f8af8c8
+  openAppid:
+  openAppSecret:
   mchId: 1409146202
   mchKey: 0976503d34ca432c601361f969fd8d85
   keyPath: F:/weixin_cert/h5.p12
   notifyUrl: http://redbtree.natapp4.cc/sell/pay/notify
+project:
+  wxMpAuthorizeUrl: http://redbtree.natapp4.cc
+  wxOpenAuthorizeUrl: http://redbtree.natapp4.cc
+  sell: http://redbtree.natapp4.cc

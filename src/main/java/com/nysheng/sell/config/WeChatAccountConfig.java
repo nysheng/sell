@@ -14,8 +14,10 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class WeChatAccountConfig {
-    private String weAppId;
-    private String weAppSecret;
+    private String weAppId;//公众平台id
+    private String weAppSecret;//公众平台秘钥
+    private String openAppId;//开放平台id
+    private String openAppSecret;//开放平台秘钥
     private String mchId;//商户号
     private String mchKey;//商户密匙
     private String keyPath;//商户证书路径

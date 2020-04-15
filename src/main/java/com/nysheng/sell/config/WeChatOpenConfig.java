@@ -9,25 +9,25 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
- * 微信公众授权配置
+ * 微信开放平台配置
  *
  * @author nysheng
- * 2020/4/6 18:01
+ * 2020/4/14 16:26
  */
 @Component
-public class WeChatMpConfig {
+public class WeChatOpenConfig {
     @Autowired
     private WeChatAccountConfig weChatAccountConfig;
     @Bean
-    public WxMpService wxMpService(){
+    public WxMpService wxOpenService(){
         WxMpService wxMpService=new WxMpServiceImpl();
-        wxMpService.setWxMpConfigStorage(wxMpConfigStorage());
+        wxMpService.setWxMpConfigStorage(wxOpenConfigStorage());
         return wxMpService;
     }
-    public WxMpConfigStorage wxMpConfigStorage(){
+    private WxMpConfigStorage wxOpenConfigStorage(){
         WxMpDefaultConfigImpl wxMpConfigStorage=new WxMpDefaultConfigImpl();
-        wxMpConfigStorage.setAppId(weChatAccountConfig.getWeAppId());
-        wxMpConfigStorage.setSecret(weChatAccountConfig.getWeAppSecret());
+        wxMpConfigStorage.setAppId(weChatAccountConfig.getOpenAppId());
+        wxMpConfigStorage.setSecret(weChatAccountConfig.getOpenAppId());
         return wxMpConfigStorage;
     }
 }
