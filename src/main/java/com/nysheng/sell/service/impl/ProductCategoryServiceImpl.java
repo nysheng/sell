@@ -1,9 +1,10 @@
-package com.nysheng.sell.service;
+package com.nysheng.sell.service.impl;
 
 import com.nysheng.sell.dataobject.ProductCategory;
 import com.nysheng.sell.enums.ResultEnum;
 import com.nysheng.sell.exception.SellException;
 import com.nysheng.sell.repository.ProductCategoryRepository;
+import com.nysheng.sell.service.ProductCategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

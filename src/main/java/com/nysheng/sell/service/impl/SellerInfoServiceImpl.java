@@ -1,9 +1,10 @@
-package com.nysheng.sell.service;
+package com.nysheng.sell.service.impl;
 
 import com.nysheng.sell.dataobject.SellerInfo;
 import com.nysheng.sell.enums.ResultEnum;
 import com.nysheng.sell.exception.SellException;
 import com.nysheng.sell.repository.SellerInfoRepository;
+import com.nysheng.sell.service.SellerInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Slf4j
-public class SellerInfoServiceImpl implements SellerInfoService{
+public class SellerInfoServiceImpl implements SellerInfoService {
     @Autowired
     private SellerInfoRepository sellerInfoRepository;
     @Override

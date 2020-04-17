@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 import java.util.UUID;
@@ -50,5 +52,18 @@ public class SellerInfoController {
         //设置token到cookie
         CookieUtil.set(response, CookieConstant.TOKEN,token,CookieConstant.MAXAGE_7200);
         return new ModelAndView("redirect:"+ projectUrlConfig.getSell()+"/sell/seller/order/list");
+    }
+    @GetMapping("/logout")
+    public ModelAndView logout(HttpServletRequest request,HttpServletResponse response,Map<String,Object> map){
+        //获得包含token的cookie
+        Cookie cookie = CookieUtil.get(request, CookieConstant.TOKEN);
+        if(cookie!=null){
+            //清除redis中token
+            stringRedisTemplate.opsForValue().getOperations().delete(String.format(RedisConstant.TOOKEN_PREFIX,cookie.getValue()));
+            //清除cookie中token
+            CookieUtil.set(response,CookieConstant.TOKEN,null,0);
+        }
+        map.put("redirectUrl","/sell/seller/order/list");
+        return new ModelAndView("common/success",map);
     }
 }

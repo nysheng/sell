@@ -1,4 +1,4 @@
-package com.nysheng.sell.service;
+package com.nysheng.sell.service.impl;
 
 import com.nysheng.sell.dataobject.ProductInfo;
 import com.nysheng.sell.dto.CartDTO;
@@ -6,6 +6,7 @@ import com.nysheng.sell.enums.ProductStatusEnum;
 import com.nysheng.sell.enums.ResultEnum;
 import com.nysheng.sell.exception.SellException;
 import com.nysheng.sell.repository.ProductInfoRepository;
+import com.nysheng.sell.service.ProductInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

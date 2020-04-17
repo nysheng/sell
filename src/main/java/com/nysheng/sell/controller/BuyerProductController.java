@@ -2,8 +2,8 @@ package com.nysheng.sell.controller;
 
 import com.nysheng.sell.dataobject.ProductCategory;
 import com.nysheng.sell.dataobject.ProductInfo;
-import com.nysheng.sell.service.ProductCategoryServiceImpl;
-import com.nysheng.sell.service.ProductInfoServiceImpl;
+import com.nysheng.sell.service.impl.ProductCategoryServiceImpl;
+import com.nysheng.sell.service.impl.ProductInfoServiceImpl;
 import com.nysheng.sell.vo.ProductInfoVO;
 import com.nysheng.sell.vo.ProductVO;
 import com.nysheng.sell.vo.ResultVO;

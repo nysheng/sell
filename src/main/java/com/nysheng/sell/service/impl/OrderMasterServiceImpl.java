@@ -1,4 +1,4 @@
-package com.nysheng.sell.service;
+package com.nysheng.sell.service.impl;
 
 import com.nysheng.sell.dataobject.OrderDetail;
 import com.nysheng.sell.dataobject.OrderMaster;
@@ -11,6 +11,10 @@ import com.nysheng.sell.enums.ResultEnum;
 import com.nysheng.sell.exception.SellException;
 import com.nysheng.sell.repository.OrderDetailRepository;
 import com.nysheng.sell.repository.OrderMasterRepository;
+import com.nysheng.sell.service.OrderMasterService;
+import com.nysheng.sell.service.PayService;
+import com.nysheng.sell.service.ProductInfoService;
+import com.nysheng.sell.service.PushMessageService;
 import com.nysheng.sell.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -45,6 +49,8 @@ public class OrderMasterServiceImpl implements OrderMasterService {
     private OrderMasterRepository orderMasterRepository;
     @Autowired
     private PayService payService;
+    @Autowired
+    private PushMessageService pushMessageService;
     @Override
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
@@ -174,6 +180,8 @@ public class OrderMasterServiceImpl implements OrderMasterService {
             log.error("【完结订单】订单更新失败，orderMaster:{}",orderMaster);
             throw new SellException(ResultEnum.ORDER_UPDATE_FAIL);
         }
+        //推送微信消息
+        pushMessageService.orderStatus(orderDTO);
         return orderDTO;
     }
 

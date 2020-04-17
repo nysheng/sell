@@ -7,7 +7,7 @@ import com.nysheng.sell.dto.OrderDTO;
 import com.nysheng.sell.enums.ResultEnum;
 import com.nysheng.sell.exception.SellException;
 import com.nysheng.sell.form.OrderForm;
-import com.nysheng.sell.service.BuyerPermissionCheckServiceImpl;
+import com.nysheng.sell.service.impl.BuyerPermissionCheckServiceImpl;
 import com.nysheng.sell.service.OrderMasterService;
 import com.nysheng.sell.vo.ResultVO;
 import lombok.extern.slf4j.Slf4j;

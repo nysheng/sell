@@ -2,6 +2,7 @@ package com.nysheng.sell.service;
 
 import com.nysheng.sell.dataobject.ProductInfo;
 import com.nysheng.sell.enums.ProductStatusEnum;
+import com.nysheng.sell.service.impl.ProductInfoServiceImpl;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

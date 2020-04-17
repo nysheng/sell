@@ -1,6 +1,7 @@
 package com.nysheng.sell.service;
 
 import com.nysheng.sell.dataobject.ProductCategory;
+import com.nysheng.sell.service.impl.ProductCategoryServiceImpl;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
