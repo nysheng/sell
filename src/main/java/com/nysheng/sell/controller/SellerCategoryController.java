@@ -53,7 +53,7 @@ public class SellerCategoryController {
         }
         return new ModelAndView("category/index",map);
     }
-    @PostMapping("save")
+    @PostMapping("/save")
     public ModelAndView save(@Valid CategoryForm categoryForm,Map<String,Object> map){
         ProductCategory productCategory=new ProductCategory();
         if(!StringUtils.isEmpty(categoryForm.getCategoryId())){

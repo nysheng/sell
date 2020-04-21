@@ -28,7 +28,7 @@ import java.util.Map;
 public class SellerOrderController {
     @Autowired
     private OrderMasterService orderMasterService;
-    @GetMapping("list")
+    @GetMapping("/list")
     public ModelAndView list(@RequestParam(value = "page",defaultValue = "1")Integer page, @RequestParam(value = "size",defaultValue = "3")Integer size, Map<String,Object>  map){
         Page<OrderDTO> orderDTOPage = orderMasterService.findList(PageRequest.of(page-1, size));
         map.put("orderDTOPage",orderDTOPage);

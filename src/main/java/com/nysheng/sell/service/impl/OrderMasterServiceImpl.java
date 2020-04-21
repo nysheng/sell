@@ -11,10 +11,7 @@ import com.nysheng.sell.enums.ResultEnum;
 import com.nysheng.sell.exception.SellException;
 import com.nysheng.sell.repository.OrderDetailRepository;
 import com.nysheng.sell.repository.OrderMasterRepository;
-import com.nysheng.sell.service.OrderMasterService;
-import com.nysheng.sell.service.PayService;
-import com.nysheng.sell.service.ProductInfoService;
-import com.nysheng.sell.service.PushMessageService;
+import com.nysheng.sell.service.*;
 import com.nysheng.sell.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -51,6 +48,8 @@ public class OrderMasterServiceImpl implements OrderMasterService {
     private PayService payService;
     @Autowired
     private PushMessageService pushMessageService;
+    @Autowired
+    private WebSocket webSocket;
     @Override
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
@@ -80,6 +79,8 @@ public class OrderMasterServiceImpl implements OrderMasterService {
         //5扣库存
         List<CartDTO> cartDTOList=orderDTO.getOrderDetailList().stream().map(e->new CartDTO(e.getProductId(),e.getProductQuantity())).collect(Collectors.toList());
         productInfoService.decreaseStock(cartDTOList);
+        //6发送websocket消息(发送订单号)
+        webSocket.sendMessage(orderMaster.getOrderId());
         return orderDTO;
     }
 
