@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author nysheng
  * 2020/4/16 16:21
  */
-@Aspect
+//@Aspect
 @Component
 @Slf4j
 public class SellerAuthorizeAspect {

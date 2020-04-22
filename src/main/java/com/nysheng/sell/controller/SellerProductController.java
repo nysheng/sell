@@ -10,6 +10,7 @@ import com.nysheng.sell.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -90,6 +91,7 @@ public class SellerProductController {
         return new ModelAndView("product/index",map);
     }
     @PostMapping("/save")
+    @CacheEvict(cacheNames = "product",key = "123")
     public ModelAndView save(@Valid ProductForm productForm, BindingResult bindingResult, Map<String, Object> map){
         if(bindingResult.hasErrors()){
             map.put("msg",bindingResult.getFieldError());

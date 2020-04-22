@@ -1,6 +1,7 @@
 package com.nysheng.sell.exception;
 
 import com.nysheng.sell.enums.ResultEnum;
+import lombok.Getter;
 
 /**
  * 异常处理
@@ -8,6 +9,7 @@ import com.nysheng.sell.enums.ResultEnum;
  * @author nysheng
  * 2020/4/2 17:52
  */
+@Getter
 public class SellException extends RuntimeException {
     private Integer code;
     public SellException(ResultEnum resultEnum){
