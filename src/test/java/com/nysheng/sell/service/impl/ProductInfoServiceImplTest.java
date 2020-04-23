@@ -1,4 +1,4 @@
-package com.nysheng.sell.service;
+package com.nysheng.sell.service.impl;
 
 import com.nysheng.sell.dataobject.ProductInfo;
 import com.nysheng.sell.enums.ProductStatusEnum;

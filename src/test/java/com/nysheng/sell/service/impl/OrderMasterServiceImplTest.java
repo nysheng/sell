@@ -1,4 +1,4 @@
-package com.nysheng.sell.service;
+package com.nysheng.sell.service.impl;
 
 import com.nysheng.sell.dataobject.OrderDetail;
 import com.nysheng.sell.dto.OrderDTO;

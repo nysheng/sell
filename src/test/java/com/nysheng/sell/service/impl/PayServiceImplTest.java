@@ -1,13 +1,14 @@
-package com.nysheng.sell.service;
+package com.nysheng.sell.service.impl;
 
 import com.nysheng.sell.dto.OrderDTO;
+import com.nysheng.sell.service.OrderMasterService;
+import com.nysheng.sell.service.PayService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * 微信支付 测试

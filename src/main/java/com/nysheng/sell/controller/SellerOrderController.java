@@ -1,6 +1,5 @@
 package com.nysheng.sell.controller;
 
-import com.nysheng.sell.dataobject.OrderDetail;
 import com.nysheng.sell.dto.OrderDTO;
 import com.nysheng.sell.enums.ResultEnum;
 import com.nysheng.sell.exception.SellException;
@@ -12,8 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**

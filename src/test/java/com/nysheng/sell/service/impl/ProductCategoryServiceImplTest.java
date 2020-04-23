@@ -1,4 +1,4 @@
-package com.nysheng.sell.service;
+package com.nysheng.sell.service.impl;
 
 import com.nysheng.sell.dataobject.ProductCategory;
 import com.nysheng.sell.service.impl.ProductCategoryServiceImpl;
